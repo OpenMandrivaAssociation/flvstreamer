@@ -1,6 +1,6 @@
 %define name 	flvstreamer
 %define version 1.8e
-%define release %mkrel 2
+%define release %mkrel 3
 
 Summary: 	Open source command line RTMP client
 Name: 		%{name}
@@ -30,16 +30,14 @@ or restrictive-license protocol specifications.
 %install
 rm -fr $RPM_BUILD_ROOT
 mkdir -p %{buildroot}%{_bindir}
-%ifarch i586
-	install -m 755 flvstreamer_x86 %{buildroot}%{_bindir}/
-	install -m 755 streams_x86 %{buildroot}%{_bindir}/
-%endif
+install -m 755 flvstreamer_x86 %{buildroot}%{_bindir}/
+install -m 755 streams_x86 %{buildroot}%{_bindir}/
 
 %clean
 rm -fr $RPM_BUILD_ROOT
 
 %files
-%defattr(755,root,root)
+%defattr(-,root,root)
 %doc README
 %{_bindir}/flvstreamer_x86
 %{_bindir}/streams_x86
