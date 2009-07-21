@@ -1,6 +1,6 @@
 %define name 	flvstreamer
 %define version 1.8e
-%define release %mkrel 0.1
+%define release %mkrel 1
 
 Summary: 	Open source command line RTMP client
 Name: 		%{name}
