@@ -1,6 +1,6 @@
 %define name 	flvstreamer
 %define version 1.8e
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary: 	Open source command line RTMP client
 Name: 		%{name}
@@ -40,5 +40,6 @@ rm -fr $RPM_BUILD_ROOT
 
 %files
 %defattr(755,root,root)
+%doc README
 %{_bindir}/flvstreamer_x86
 %{_bindir}/streams_x86
