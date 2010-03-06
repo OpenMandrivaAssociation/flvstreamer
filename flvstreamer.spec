@@ -1,12 +1,12 @@
 %define name 	flvstreamer
-%define version 1.8e
-%define release %mkrel 3
+%define version 2.1c1
+%define release %mkrel 1
 
 Summary: 	Open source command line RTMP client
 Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
-License: 	GPL
+License: 	GPLv2+
 Group: 		Networking/File transfer
 Url: 		http://savannah.nongnu.org/projects/flvstreamer
 Source: 	http://mirrors.linhub.com/savannah/flvstreamer/source/flvstreamer-%{version}.tar.gz
@@ -25,19 +25,20 @@ or restrictive-license protocol specifications.
 %setup -q -n %{name}
 
 %build
-%make %{name} streams
+%make posix OPT="%optflags" XLDFLAGS="%{?ldflags}"
 
 %install
 rm -fr $RPM_BUILD_ROOT
 mkdir -p %{buildroot}%{_bindir}
-install -m 755 flvstreamer_x86 %{buildroot}%{_bindir}/
-install -m 755 streams_x86 %{buildroot}%{_bindir}/
+find -type f -perm -u+x | xargs install -m755 -t %{buildroot}%{_bindir}
 
 %clean
 rm -fr $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
-%doc README
-%{_bindir}/flvstreamer_x86
-%{_bindir}/streams_x86
+%doc README ChangeLog
+%{_bindir}/flvstreamer
+%{_bindir}/streams
+%{_bindir}/rtmpsrv
+%{_bindir}/rtmpsuck
