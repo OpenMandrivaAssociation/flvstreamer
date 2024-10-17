@@ -8,7 +8,7 @@ Version: 	%{version}
 Release: 	%{release}
 License: 	GPLv2+
 Group: 		Networking/File transfer
-Url: 		http://savannah.nongnu.org/projects/flvstreamer
+Url: 		https://savannah.nongnu.org/projects/flvstreamer
 Source: 	http://mirrors.linhub.com/savannah/flvstreamer/source/flvstreamer-%{version}.tar.gz
 BuildRoot: 	%{_tmppath}/%{name}-root
 
