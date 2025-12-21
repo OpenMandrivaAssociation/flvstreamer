@@ -12,6 +12,7 @@ Url: 		https://savannah.nongnu.org/projects/flvstreamer
 Source: 	http://mirrors.linhub.com/savannah/flvstreamer/source/flvstreamer-%{version}.tar.gz
 BuildRoot: 	%{_tmppath}/%{name}-root
 
+BuildRequires:	make
 %description
 Flvstreamer is an open source command-line RTMP client intended to stream 
 audio or video content from all types of flash or rtmp servers. Forked from 
